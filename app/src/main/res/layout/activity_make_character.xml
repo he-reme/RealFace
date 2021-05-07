@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MakeCharacterActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/background_light"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1.5"
+            android:background="@android:color/background_light"
+            android:orientation="horizontal"
+            android:padding="0dp">
+
+            <ImageButton
+                android:id="@+id/saveButton"
+                android:layout_width="wrap_content"
+                android:layout_height="75dp"
+                android:layout_margin="0dp"
+                android:layout_weight="1"
+                android:background="@android:color/background_light"
+                android:scaleType="fitCenter"
+                android:src="@drawable/save" />
+            />
+        </LinearLayout>
+
+        <!-- FrameLayout을 이용하여 뷰의 겹침 사용 가능 -->
+        <!-- 먼저 생성한 뷰를 바탕으로 새로 생성한 뷰들이 그 위에 덮어지는 형식-->
+        <LinearLayout
+            android:id="@+id/saveLayout"
+            android:layout_width="match_parent"
+            android:layout_height="694dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <FrameLayout
+                android:id="@+id/saveView"
+                android:layout_width="match_parent"
+                android:layout_height="380dp"
+                android:background="@android:color/background_light">
+
+                <ImageView
+                    android:id="@+id/face"
+                    android:layout_width="170dp"
+                    android:layout_height="189dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="15dp"
+                    android:layout_weight="1"
+                    android:scaleType="centerCrop" />
+
+                <ImageView
+                    android:id="@+id/body"
+                    android:layout_width="190dp"
+                    android:layout_height="199dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="112dp"
+                    android:layout_weight="1"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/body" />
+
+                <ImageView
+                    android:id="@+id/hair"
+                    android:layout_width="190dp"
+                    android:layout_height="262dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginLeft="4dp"
+                    android:layout_marginTop="50dp"
+                    android:layout_weight="1"
+                    android:scaleType="centerCrop" />
+
+                <ImageView
+                    android:id="@+id/shoes"
+                    android:layout_width="190dp"
+                    android:layout_height="199dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="112dp"
+                    android:layout_weight="1"
+                    android:scaleType="centerCrop" />
+
+                <ImageView
+                    android:id="@+id/pants"
+                    android:layout_width="190dp"
+                    android:layout_height="199dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="114dp"
+                    android:layout_weight="1"
+                    android:scaleType="centerCrop" />
+
+                <ImageView
+                    android:id="@+id/shirts"
+                    android:layout_width="190dp"
+                    android:layout_height="199dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="112dp"
+                    android:layout_weight="1"
+                    android:scaleType="centerCrop" />
+            </FrameLayout>
+
+        </LinearLayout>
+
+        <!-- tab뷰 구현 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="595dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <TabHost
+                android:id="@+id/tabHost"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TabWidget
+                        android:id="@android:id/tabs"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                    <FrameLayout
+                        android:id="@android:id/tabcontent"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                        <!-- 머리 -->
+                        <LinearLayout
+                            android:id="@+id/tab1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <ImageButton
+                                android:id="@+id/hair1Button"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="0dp"
+                                android:layout_weight="1"
+                                android:scaleType="fitCenter"
+                                app:srcCompat="@drawable/hair1" />
+
+                            <ImageButton
+                                android:id="@+id/hair2Button"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:scaleType="fitCenter"
+                                app:srcCompat="@drawable/hair2" />
+
+                            <ImageButton
+                                android:id="@+id/hair3Button"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:scaleType="fitCenter"
+                                app:srcCompat="@drawable/hair3" />
+                        </LinearLayout>
+
+                        <!--상의 -->
+                        <LinearLayout
+                            android:id="@+id/tab2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <ImageButton
+                                android:id="@+id/shirts1Button"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="0dp"
+                                android:layout_weight="1"
+                                android:scaleType="fitCenter"
+                                app:srcCompat="@drawable/shirts1" />
+
+                            <ImageButton
+                                android:id="@+id/shirts2Button"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:scaleType="fitCenter"
+                                app:srcCompat="@drawable/shirts2" />
+
+                            <ImageButton
+                                android:id="@+id/shirts3Button"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:scaleType="fitCenter"
+                                app:srcCompat="@drawable/shirts3" />
+
+                        </LinearLayout>
+
+                        <!-- 하의 -->
+                        <LinearLayout
+                            android:id="@+id/tab3"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <ImageButton
+                                android:id="@+id/pants1Button"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="0dp"
+                                android:layout_weight="1"
+                                android:scaleType="fitCenter"
+                                app:srcCompat="@drawable/pants1" />
+
+                            <ImageButton
+                                android:id="@+id/pants2Button"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:scaleType="fitCenter"
+                                app:srcCompat="@drawable/pants2" />
+
+                            <ImageButton
+                                android:id="@+id/pants3Button"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:scaleType="fitCenter"
+                                app:srcCompat="@drawable/pants3" />
+                        </LinearLayout>
+
+                        <!-- 신발 -->
+                        <LinearLayout
+                            android:id="@+id/tab4"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <ImageButton
+                                android:id="@+id/shoes1Button"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="0dp"
+                                android:layout_weight="1"
+                                android:scaleType="fitCenter"
+                                app:srcCompat="@drawable/shoes1" />
+
+                            <ImageButton
+                                android:id="@+id/shoes2Button"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:scaleType="fitCenter"
+                                app:srcCompat="@drawable/shoes2" />
+
+                            <ImageButton
+                                android:id="@+id/shoes3Button"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:scaleType="fitCenter"
+                                app:srcCompat="@drawable/shoes3" />
+
+                        </LinearLayout>
+                    </FrameLayout>
+                </LinearLayout>
+            </TabHost>
+        </LinearLayout>
+    </LinearLayout>
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.h.RealFace">
+
+    <!-- 추가한 것/앱에서 안드로이드 디바이스의 카메라에 접근하기 위해서는 필요한  퍼미션 입니다. -->
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.camera.autofocus"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.camera.front"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.camera.front.autofocus"
+        android:required="false" />
+
+    <meta-data
+        android:name="com.google.android.gms.vision.DEPENDENCIES"
+        android:value="face" />
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <supports-screens
+        android:anyDensity="true"
+        android:largeScreens="true"
+        android:normalScreens="true"
+        android:resizeable="true"
+        android:smallScreens="true" />
+
+    <!-- 여기까지 -->
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="RealFace"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:largeHeap="true">
+        <!--메모리 공간 확보-->
+
+        <activity android:name=".MainActivity">
+
+            <!-- 여기까지 -->
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".PhotoViewerActivity"
+            android:label="PhotoViewerActivity"
+            android:screenOrientation="fullSensor"
+            android:theme="@android:style/Theme.Black.NoTitleBar" />
+        <activity
+            android:name=".ImageProcessingActivity"
+            android:label="ImageProcessingActivity">
+            android:configChanges="keyboardHidden|orientation">
+        </activity>
+        <activity
+            android:name=".MakeCharacterActivity"
+            android:label="MakeCharacterActivity">
+            >
+        </activity>
+        <activity android:name=".GoHomeActivity" />
+        <activity android:name=".SaveResultActivity"></activity>
+    </application>
+
+</manifest>
+
+
